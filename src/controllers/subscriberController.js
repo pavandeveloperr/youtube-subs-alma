@@ -55,7 +55,7 @@ exports.getSubscriberById = async (req, res) => {
         return res.status(404).json({error: 'Invalid id'})
     }
 
-    const subscribers = await subscriber.findById(id)
+    const subscribers = await subscriber.findById(id).select('-__v')
 
     if(!subscribers) {
         return res.status(404).json({error: 'No subscriber exists with that id'})
