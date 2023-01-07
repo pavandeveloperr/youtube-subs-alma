@@ -15,7 +15,7 @@ router.route("/subscribers").get(getSubscribers);
 router.route("/subscribers").post(createSubscribers);
 router.route("/subscribers/:id").delete(deleteSubscriber);
 router.route("/subscribers/:id").get(getSubscriberById);
-router.route("/subscriber/names").get(getSubscriberNames);
+router.route("/subscribers/names").get(getSubscriberNames);
 router.route("/subscribers/:id").patch(UpdateSubscriber);
 
 module.exports = router;
