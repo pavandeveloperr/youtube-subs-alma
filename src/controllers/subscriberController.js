@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-const subscribers = require("../models/subscribers");
-const subscriber = require("../models/subscribers")
+const subscriber = require("../models/subscribers");
 
 // GET all subscribers
 exports.getSubscribers = async (req, res) => {
