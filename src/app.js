@@ -1,18 +1,17 @@
 const express = require("express");
 const app = express();
 
-//Parse JSON bodies using express.json() method (middleware)
+//Parse JSON bodies using express.json() (middleware)
 app.use(express.json());
 app.use((req, res, next) => {
   console.log(req.path, req.method);
   next();
 });
 
-//routes
+// routes
 const subscriberRoute = require("./routes/subscriberRoutes");
 
 // Home Route
-
 app.get("/", (req, res) => {
   res.status(200).json({
     greeting:
@@ -38,7 +37,5 @@ app.get("/", (req, res) => {
 
 // router middleware
 app.use("/", subscriberRoute);
-
-module.exports = app;
 
 module.exports = app;

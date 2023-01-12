@@ -6,12 +6,13 @@ const app = require("./src/app.js");
 // Parse JSON bodies using express.json() method (middleware)
 app.use(express.json());
 app.use((req, res, next) => {
-  console.log(req.path, req.method)
-  next()
-})
+  console.log(req.path, req.method);
+  next();
+});
 
 //connect to db
-mongoose.connect(process.env.DATABASE_URL)
+mongoose
+  .connect(process.env.DATABASE_URL)
   .then(() => {
     // listen for requests
     app.listen(process.env.PORT, () => {
