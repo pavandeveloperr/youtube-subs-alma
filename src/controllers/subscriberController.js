@@ -50,7 +50,7 @@ exports.deleteSubscriber = async (req, res) => {
       return res.status(400).json({ error: `No subscriber with this ${id}` });
     } else {
       // if success , return status 200 with success message
-      res.status(200).json({ message: "successfully deleted subscriber" });
+      res.status(200).json(subscribers);
     }
   } catch (error) {
     // if error occurs, return status 400 with error
