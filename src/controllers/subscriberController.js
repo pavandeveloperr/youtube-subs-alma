@@ -117,6 +117,9 @@ exports.UpdateSubscriber = async (req, res) => {
       { _id: id },
       {
         ...req.body,
+      },
+      {
+        new: true
       }
     );
 
@@ -126,7 +129,7 @@ exports.UpdateSubscriber = async (req, res) => {
         .status(400)
         .json({ error: `No subscriber exists with given ${id} id` });
     } else {
-      res.status(200).json({ message: "Updated successfully" });
+      res.status(200).json(subscribers);
     }
   } catch (error) {
     // if error occurs, return status 400 with error message
