@@ -47,10 +47,10 @@ exports.deleteSubscriber = async (req, res) => {
 
     // if no subscriber found with given Id , return error with status 400
     if (!subscribers) {
-      return res.status(400).json({ error: `No subscriber with this ${id}` });
+      return res.status(400).json({ error: `No subscriber exists with this ${id}` });
     } else {
       // if success , return status 200 with success message
-      res.status(200).json(subscribers);
+      res.status(200).json({message: "deletion successful"});
     }
   } catch (error) {
     // if error occurs, return status 400 with error

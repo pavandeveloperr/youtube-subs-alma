@@ -1,14 +1,14 @@
 {
   "stats": {
-    "suites": 1,
-    "tests": 1,
-    "passes": 1,
+    "suites": 7,
+    "tests": 7,
+    "passes": 7,
     "pending": 0,
     "failures": 0,
-    "start": "2023-01-12T18:11:33.000Z",
-    "end": "2023-01-12T18:11:33.044Z",
-    "duration": 44,
-    "testsRegistered": 1,
+    "start": "2023-01-13T13:12:22.307Z",
+    "end": "2023-01-13T13:12:22.369Z",
+    "duration": 62,
+    "testsRegistered": 7,
     "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "3c3a0f16-759f-4c7b-8f7d-a908c7f96515",
+      "uuid": "832164fd-f5b1-4372-9f71-ba9b787cc04c",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,40 +27,274 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "cd996ad6-8d80-41f1-8de2-de444271b868",
-          "title": "/Test the home route",
+          "uuid": "9dfddda5-8598-47e2-979d-07d5eb40689b",
+          "title": "GET all subscribers",
           "fullFile": "C:\\Users\\Pavan Kulkarni\\Desktop\\youtube-subs-alma\\__tests__\\controller.test.js",
           "file": "\\__tests__\\controller.test.js",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "should get default API home route..",
-              "fullTitle": "/Test the home route should get default API home route..",
+              "title": "should get all subscribers",
+              "fullTitle": "GET all subscribers should get all subscribers",
               "timedOut": false,
-              "duration": 35,
+              "duration": 9,
               "state": "passed",
               "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "chai\n.request(server)\n.get(\"/\")\n.end((err, res) => {\n  res.should.have.status(200);\n  res.body.should.be.a(\"object\");\n  const greetMsg = res.body.greeting;\n  expect(greetMsg).to.be.equal('Hello, i am Pavan Kulkarni, this is a backend API to get Youtube Subscribers');   \n  done();\n});",
+              "code": "chai\n  .request(\"http://localhost:3000\")\n  .get(\"/subscribers\")\n  .end((err, res) => {\n    if (err) {\n      console.log(err);\n    } else {\n      res.should.have.status(200);\n      res.body.should.be.a(\"array\");\n      res.body.length.should.be.eql(3);\n    }\n  });\ndone();",
               "err": {},
-              "uuid": "909a3b8e-bca6-4cb8-80b9-dfe96c857745",
-              "parentUUID": "cd996ad6-8d80-41f1-8de2-de444271b868",
+              "uuid": "5b73a684-48cb-4344-8450-29319f55f015",
+              "parentUUID": "9dfddda5-8598-47e2-979d-07d5eb40689b",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "909a3b8e-bca6-4cb8-80b9-dfe96c857745"
+            "5b73a684-48cb-4344-8450-29319f55f015"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 35,
+          "duration": 9,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 60000
+        },
+        {
+          "uuid": "60e7eb9b-488d-4cf3-a7d1-30370a426106",
+          "title": "GET single subscriber",
+          "fullFile": "C:\\Users\\Pavan Kulkarni\\Desktop\\youtube-subs-alma\\__tests__\\controller.test.js",
+          "file": "\\__tests__\\controller.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should get a single subscriber",
+              "fullTitle": "GET single subscriber should get a single subscriber",
+              "timedOut": false,
+              "duration": 2,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "chai\n  .request(\"http://localhost:3000\")\n  .get(\"/subscribers/63b92200d26c66c088e7f1c0\")\n  .end((err, res) => {\n    if (err) {\n      console.log(err);\n    } else {\n      res.should.have.status(200);\n      res.body.should.be.a(\"object\");\n      res.body.length.should.be.eql(1);\n      res.body.should.have.property('name');\n      res.body.should.have.property('subscribedChannel');\n    }\n  });\ndone();",
+              "err": {},
+              "uuid": "45e8c1fd-c391-425c-a285-a49167dd3f7b",
+              "parentUUID": "60e7eb9b-488d-4cf3-a7d1-30370a426106",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "45e8c1fd-c391-425c-a285-a49167dd3f7b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 60000
+        },
+        {
+          "uuid": "b81d33b0-42ff-4ea0-9e20-842b008b9e29",
+          "title": "POST a subscriber",
+          "fullFile": "C:\\Users\\Pavan Kulkarni\\Desktop\\youtube-subs-alma\\__tests__\\controller.test.js",
+          "file": "\\__tests__\\controller.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should post a subscriber",
+              "fullTitle": "POST a subscriber should post a subscriber",
+              "timedOut": false,
+              "duration": 2,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const subscriberData = {\n  name: \"Lucifer\",\n  subscribedChannel: \"sentex\"\n}\nchai\n  .request(\"http://localhost:3000\")\n  .post(\"/subscribers\")\n  .send(subscriberData)\n  .end((err, res) => {\n    if (err) {\n      console.log(err);\n    } else {\n      res.should.have.status(200);\n      res.body.should.be.a(\"object\");\n      res.body.should.have.property('insertId');\n      res.body.should.have.property('insertId').to.not.eq(0);\n    }\n  });\ndone();",
+              "err": {},
+              "uuid": "209a4bb1-1c7a-4b6b-bff1-9bc1822d7132",
+              "parentUUID": "b81d33b0-42ff-4ea0-9e20-842b008b9e29",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "209a4bb1-1c7a-4b6b-bff1-9bc1822d7132"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 60000
+        },
+        {
+          "uuid": "452cebe5-88ae-4eab-8db9-5fccf4dc938c",
+          "title": "DELETE a subscriber",
+          "fullFile": "C:\\Users\\Pavan Kulkarni\\Desktop\\youtube-subs-alma\\__tests__\\controller.test.js",
+          "file": "\\__tests__\\controller.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should delete a subscriber",
+              "fullTitle": "DELETE a subscriber should delete a subscriber",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "chai\n  .request(\"http://localhost:3000\")\n  .delete(\"/subscribers/63b9220bd26c66c088e7f1c2\")\n  .end((err, res) => {\n    if (err) {\n      console.log(err);\n    } else {\n      res.should.have.status(200);\n      res.body.should.be.a(\"object\");\n      const message = res.body.message\n      expect(message).to.be.eq('deletion successful')\n    }\n  });\ndone();",
+              "err": {},
+              "uuid": "0fa72ff9-1390-4554-badc-70878ae4fbc8",
+              "parentUUID": "452cebe5-88ae-4eab-8db9-5fccf4dc938c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0fa72ff9-1390-4554-badc-70878ae4fbc8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 60000
+        },
+        {
+          "uuid": "36e65f7f-3e8e-43a9-8daf-0a83c494e875",
+          "title": "GET subscriber names",
+          "fullFile": "C:\\Users\\Pavan Kulkarni\\Desktop\\youtube-subs-alma\\__tests__\\controller.test.js",
+          "file": "\\__tests__\\controller.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should get a PATH /subscribers/names",
+              "fullTitle": "GET subscriber names should get a PATH /subscribers/names",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "chai\n  .request(\"http://localhost:3000\")\n  .get(\"/subscribers/names\")\n  .end((err, res) => {\n    if (err) {\n      console.log(err);\n    } else {\n      res.should.have.status(200);\n      res.body.should.be.a(\"array\");\n      res.body.length.to.be.eq(3);\n    }\n  });\ndone();",
+              "err": {},
+              "uuid": "e8c2ece4-45fe-4bc5-a25b-084e430840a8",
+              "parentUUID": "36e65f7f-3e8e-43a9-8daf-0a83c494e875",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e8c2ece4-45fe-4bc5-a25b-084e430840a8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 60000
+        },
+        {
+          "uuid": "8eb88e79-ed94-408c-88c2-8700e99a7400",
+          "title": "UPDATE a subscriber",
+          "fullFile": "C:\\Users\\Pavan Kulkarni\\Desktop\\youtube-subs-alma\\__tests__\\controller.test.js",
+          "file": "\\__tests__\\controller.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should UPDATE a subscriber",
+              "fullTitle": "UPDATE a subscriber should UPDATE a subscriber",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const subscriberData = {\n  name: \"Pavan\",\n  subscribedChannel: \"Almabetter\"\n}\nchai\n  .request(\"http://localhost:3000\")\n  .patch(\"/subscribers/63c154f45914921a37f2e1ea\")\n  .send(subscriberData)\n  .end((err, res) => {\n    if (err) {\n      console.log(err);\n    } else {\n      res.should.have.status(200);\n      res.body.should.be.a(\"object\");\n    }\n  });\ndone();",
+              "err": {},
+              "uuid": "601e7656-b1bf-4693-96ea-6428fe472217",
+              "parentUUID": "8eb88e79-ed94-408c-88c2-8700e99a7400",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "601e7656-b1bf-4693-96ea-6428fe472217"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 60000
+        },
+        {
+          "uuid": "3a94cb78-ee6c-4e6d-9022-9958121857ef",
+          "title": "/Test the home route",
+          "fullFile": "C:\\Users\\Pavan Kulkarni\\Desktop\\youtube-subs-alma\\__tests__\\HomeRoute.test.js",
+          "file": "\\__tests__\\HomeRoute.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should get default API home route",
+              "fullTitle": "/Test the home route should get default API home route",
+              "timedOut": false,
+              "duration": 4,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "chai\n  .request(server)\n  .get(\"/\")\n  .end((err, res) => {\n    res.should.have.status(200);\n    res.body.should.be.a(\"object\");\n    const greetingMsg = res.body.greeting;\n    expect(greetingMsg).to.be.eq(\n      \"Hello, i am Pavan Kulkarni, this is a backend API to get Youtube Subscribers\"\n    );\n  });\ndone();",
+              "err": {},
+              "uuid": "b3e56ac4-f338-473d-b06b-7c86ea9983cf",
+              "parentUUID": "3a94cb78-ee6c-4e6d-9022-9958121857ef",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b3e56ac4-f338-473d-b06b-7c86ea9983cf"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4,
           "root": false,
           "rootEmpty": false,
           "_timeout": 60000
