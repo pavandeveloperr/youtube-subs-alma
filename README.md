@@ -7,9 +7,9 @@ By including particular routes end point in the URL, users can access all subscr
     <summary>Content</summary>
     <ol>
         <li><a href="#features">Features</a></li>
-        <li><a href="#Quick-start">Quick Start</a></li>
+        <li><a href="#Quick-Start">Quick Start</a></li>
         <li><a href="#how-to-run-locally">How to run Locally</a></li>
-        <li><a href="#API-reference">API reference</a></li>
+        <li><a href="#API-Reference">API reference</a></li>
         <li><a href="#faq">FAQ</a></li>
     </ol>
 </details>
@@ -125,7 +125,7 @@ To run tests, run the following command
 
 
 ## Demo
-Demo weblink:
+Demo weblink: https://drive.google.com/file/d/1WtzqM4XIg0L6GbJGzSrhLoU05CglydjC/view?usp=sharing
 
 
 ## Features
@@ -142,7 +142,6 @@ Demo weblink:
 ## Deployment
 Deployment link:
  https://youtube-subscribers.vercel.app
-
 
 
 ## FAQ
@@ -166,3 +165,9 @@ I am a tech and web dev enthusiast.
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pavankulkarnii/)
 
 ## Screenshot
+<img width="958" alt="ss1" src="https://user-images.githubusercontent.com/63870995/212375612-da86a564-40dd-413d-b620-d20c90bdc304.png">
+<img width="960" alt="ss2" src="https://user-images.githubusercontent.com/63870995/212375655-0932a6f4-ec79-4922-95ad-36267a75aed5.png">
+<img width="960" alt="ss3" src="https://user-images.githubusercontent.com/63870995/212375709-9cc6fe3f-0307-449d-b125-8edaf6fe6119.png">
+<img width="960" alt="ss4" src="https://user-images.githubusercontent.com/63870995/212375785-217f5b33-670a-4010-81a5-7674463078e5.png">
+
+
