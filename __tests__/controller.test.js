@@ -116,8 +116,8 @@ describe("GET subscriber names", () => {
 describe("UPDATE a subscriber", () => {
   it("should UPDATE a subscriber", (done) => {
     const subscriberData = {
-      name: "Pavan",
-      subscribedChannel: "Almabetter"
+      name: "Lucifer",
+      subscribedChannel: "sentex"
     }
     chai
       .request("http://localhost:3000")
