@@ -7,6 +7,7 @@ By including particular routes end point in the URL, users can access all subscr
     <summary>Content</summary>
     <ol>
         <li><a href="#features">Features</a></li>
+        <li><a href="#Demo">Demo</a></li>
         <li><a href="#Quick-Start">Quick Start</a></li>
         <li><a href="#how-to-run-locally">How to run Locally</a></li>
         <li><a href="#API-Reference">API reference</a></li>
